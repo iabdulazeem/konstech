@@ -1,0 +1,57 @@
+{
+  "meta": { "lang": "en", "title": "Konstech — Tech & AI for Local Businesses at Lake Constance", "description": "Konstech helps businesses around Lake Constance work more efficiently with modern technology and AI." },
+  "nav": { "services": "Services", "how": "Process", "cta": "Free Consultation", "switchLang": "DE" },
+  "hero": {
+    "h1a": "Your Business.",
+    "h1b": "Faster. Smarter.",
+    "p": "We help local businesses around Lake Constance get more out of their time with modern tech and AI — no buzzwords, no overhead.",
+    "cta": "Get free consultation",
+    "sub": "No commitment · 15 minutes · Concrete ideas for your business"
+  },
+  "services": {
+    "title": "What we do for you",
+    "subtitle": "No theory — solutions that work from day one.",
+    "items": [
+      { "icon": "⚙️", "title": "Process Automation", "desc": "Recurring tasks like invoices, emails, or data entry — we build systems that handle them for you." },
+      { "icon": "🤖", "title": "Practical AI", "desc": "From intelligent text processing to automated responses — AI where it delivers real value." },
+      { "icon": "📊", "title": "Data Made Useful", "desc": "Turn your existing data into clear dashboards and decision aids — no more Excel chaos." },
+      { "icon": "🌐", "title": "Digital Presence", "desc": "Fast, modern websites and online tools that convince customers and save you work." },
+      { "icon": "🔗", "title": "Connect Systems", "desc": "Make your existing tools (accounting, CRM, calendar) talk to each other — automatically and error-free." },
+      { "icon": "🛡️", "title": "Security & GDPR", "desc": "Tech setup that meets German data protection requirements — without the headaches." }
+    ]
+  },
+  "how": {
+    "title": "How it works",
+    "subtitle": "From first message to running solution — in three steps.",
+    "steps": [
+      { "title": "Quick Message", "desc": "Tell us in 2–3 sentences what's on your mind. We'll get back to you within 24 hours." },
+      { "title": "Free Consultation", "desc": "15-minute call — we listen, ask questions, and give you concrete suggestions. No strings attached." },
+      { "title": "Implementation", "desc": "We build the solution, test it with you, and make sure everything runs smoothly. No tech jargon." }
+    ]
+  },
+  "results": {
+    "title": "Typical Results",
+    "subtitle": "What our clients report after working with us.",
+    "items": [
+      { "number": "-60%", "label": "less manual work" },
+      { "number": "3×", "label": "faster response times" },
+      { "number": "100%", "label": "GDPR compliant" }
+    ]
+  },
+  "contact": {
+    "title": "Let's talk",
+    "subtitle": "Free, no commitment, sent in 2 minutes.",
+    "name": "Name",
+    "namePlaceholder": "John Smith",
+    "email": "Email",
+    "emailPlaceholder": "john@example.com",
+    "message": "What can we do for you?",
+    "messagePlaceholder": "Tell us briefly what's on your mind…",
+    "submit": "Send message",
+    "note": "Your data is only used for contacting you. No spam, no newsletter.",
+    "thankYou": "✓ Message sent!",
+    "thankYouSub": "We'll get back to you within 24 hours.",
+    "rateLimitMsg": "Please wait a minute before sending again."
+  },
+  "footer": "© 2026 Konstech · Konstanz, Lake Constance"
+}

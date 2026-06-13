@@ -1,0 +1,57 @@
+{
+  "meta": { "lang": "de", "title": "Konstech — Technik & KI für lokale Unternehmen am Bodensee", "description": "Konstech hilft Unternehmen rund um den Bodensee, mit moderner Technik und KI effizienter zu arbeiten." },
+  "nav": { "services": "Leistungen", "how": "Ablauf", "cta": "Kostenlose Beratung", "switchLang": "EN" },
+  "hero": {
+    "h1a": "Ihr Unternehmen.",
+    "h1b": "Schneller. Smarter.",
+    "p": "Wir helfen lokalen Unternehmen am Bodensee, mit moderner Technik und KI mehr aus ihrer Zeit herauszuholen — ohne Buzzwords, ohne Overhead.",
+    "cta": "Jetzt kostenlos beraten lassen",
+    "sub": "Unverbindlich · 15 Minuten · Konkrete Ideen für Ihr Geschäft"
+  },
+  "services": {
+    "title": "Was wir für Sie tun",
+    "subtitle": "Keine Theorie, sondern Lösungen, die ab Tag 1 funktionieren.",
+    "items": [
+      { "icon": "⚙️", "title": "Prozesse automatisieren", "desc": "Wiederkehrende Aufgaben wie Rechnungen, E-Mails oder Datenpflege — wir bauen Systeme, die das für Sie erledigen." },
+      { "icon": "🤖", "title": "KI sinnvoll einsetzen", "desc": "Von intelligenter Textverarbeitung bis automatisierten Antworten — KI dort, wo sie echten Nutzen bringt." },
+      { "icon": "📊", "title": "Daten nutzbar machen", "desc": "Ihre vorhandenen Daten in klare Übersichten und Entscheidungshilfen verwandeln — kein Excel-Chaos mehr." },
+      { "icon": "🌐", "title": "Digitale Präsenz", "desc": "Schnelle, moderne Webseiten und Online-Tools, die Kunden überzeugen und Ihnen Arbeit abnehmen." },
+      { "icon": "🔗", "title": "Systeme verbinden", "desc": "Ihre bestehenden Tools (Buchhaltung, CRM, Kalender) miteinander sprechen lassen — automatisch und fehlerfrei." },
+      { "icon": "🛡️", "title": "Sicherheit & DSGVO", "desc": "Technik-Setup, das den deutschen Datenschutzanforderungen entspricht — ohne Kopfschmerzen." }
+    ]
+  },
+  "how": {
+    "title": "So einfach geht's",
+    "subtitle": "Von der ersten Nachricht bis zur laufenden Lösung — in drei Schritten.",
+    "steps": [
+      { "title": "Kurze Nachricht", "desc": "Erzählen Sie uns in 2–3 Sätzen, was Sie beschäftigt. Wir melden uns innerhalb von 24 Stunden." },
+      { "title": "Kostenlose Beratung", "desc": "15 Minuten Gespräch — wir hören zu, stellen Fragen und geben Ihnen konkrete Vorschläge. Unverbindlich." },
+      { "title": "Umsetzung", "desc": "Wir bauen die Lösung, testen sie mit Ihnen und sorgen dafür, dass alles rund läuft. Kein Technik-Jargon." }
+    ]
+  },
+  "results": {
+    "title": "Typische Ergebnisse",
+    "subtitle": "Was unsere Kunden nach der Zusammenarbeit berichten.",
+    "items": [
+      { "number": "-60%", "label": "weniger manuelle Arbeit" },
+      { "number": "3×", "label": "schnellere Antwortzeiten" },
+      { "number": "100%", "label": "DSGVO-konform" }
+    ]
+  },
+  "contact": {
+    "title": "Lassen Sie uns sprechen",
+    "subtitle": "Kostenlos, unverbindlich, in 2 Minuten abgeschickt.",
+    "name": "Name",
+    "namePlaceholder": "Max Mustermann",
+    "email": "E-Mail",
+    "emailPlaceholder": "max@beispiel.de",
+    "message": "Was können wir für Sie tun?",
+    "messagePlaceholder": "Erzählen Sie uns kurz, was Sie beschäftigt…",
+    "submit": "Nachricht senden",
+    "note": "Ihre Daten werden nur zur Kontaktaufnahme verwendet. Kein Spam, kein Newsletter.",
+    "thankYou": "✓ Nachricht gesendet!",
+    "thankYouSub": "Wir melden uns innerhalb von 24 Stunden bei Ihnen.",
+    "rateLimitMsg": "Bitte warten Sie eine Minute, bevor Sie erneut senden."
+  },
+  "footer": "© 2026 Konstech · Konstanz, Bodensee"
+}

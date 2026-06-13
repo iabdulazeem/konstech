@@ -1,15 +1,16 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="de" data-theme="dark">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Konstech — Technik & KI für lokale Unternehmen am Bodensee</title>
-<meta name="description" content="Konstech hilft Unternehmen rund um den Bodensee, mit moderner Technik und KI effizienter zu arbeiten. Kostenlose Erstberatung.">
+<meta name="description" content="Konstech hilft Unternehmen rund um den Bodensee, mit moderner Technik und KI effizienter zu arbeiten.">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
 <style>
   :root {
     --bg: #fafbfc;
     --surface: #fff;
+    --nav-bg: rgba(255,255,255,0.92);
     --text: #1a1a2e;
     --text2: #4a4a6a;
     --text3: #8a8aa0;
@@ -21,19 +22,35 @@
     --max-w: 960px;
   }
 
+  [data-theme="dark"] {
+    --bg: #0f1119;
+    --surface: #1a1d2e;
+    --nav-bg: rgba(15,17,25,0.92);
+    --text: #e8e8f0;
+    --text2: #a0a0b8;
+    --text3: #606078;
+    --accent: #4f8fff;
+    --accent-light: #1a2d4a;
+    --accent-dark: #3b7aed;
+    --border: #2a2d3e;
+  }
+
   * { margin: 0; padding: 0; box-sizing: border-box; }
   html { scroll-behavior: smooth; }
-  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Inter, sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; font-size: 16px; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Inter, sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; font-size: 16px; transition: background 0.3s, color 0.3s; }
 
   /* Nav */
-  nav { position: sticky; top: 0; z-index: 100; background: rgba(255,255,255,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); padding: 14px 24px; display: flex; align-items: center; justify-content: space-between; }
+  nav { position: sticky; top: 0; z-index: 100; background: var(--nav-bg); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); padding: 14px 24px; display: flex; align-items: center; justify-content: space-between; }
   .logo { font-size: 20px; font-weight: 800; color: var(--text); text-decoration: none; letter-spacing: -0.5px; }
   .logo span { color: var(--accent); }
-  .nav-links { display: flex; gap: 24px; align-items: center; }
+  .nav-right { display: flex; align-items: center; gap: 20px; }
+  .nav-links { display: flex; gap: 20px; align-items: center; }
   .nav-links a { color: var(--text2); text-decoration: none; font-size: 15px; font-weight: 500; transition: color 0.2s; }
   .nav-links a:hover { color: var(--accent); }
-  .nav-cta { background: var(--accent); color: #fff; padding: 8px 20px; border-radius: 8px; font-weight: 600; font-size: 14px; text-decoration: none; transition: background 0.2s; }
+  .nav-cta { background: var(--accent); color: #fff !important; padding: 8px 20px; border-radius: 8px; font-weight: 600; font-size: 14px; text-decoration: none; transition: background 0.2s; }
   .nav-cta:hover { background: var(--accent-dark); }
+  .toggle-btn { background: none; border: 1px solid var(--border); color: var(--text2); width: 34px; height: 34px; border-radius: 8px; cursor: pointer; font-size: 16px; display: flex; align-items: center; justify-content: center; transition: border-color 0.2s; }
+  .toggle-btn:hover { border-color: var(--accent); }
 
   /* Hero */
   .hero { max-width: var(--max-w); margin: 0 auto; padding: 80px 24px 60px; text-align: center; }
@@ -53,15 +70,16 @@
   /* Services grid */
   .services { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
   .service-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 28px 24px; transition: border-color 0.2s, box-shadow 0.2s; }
-  .service-card:hover { border-color: var(--accent); box-shadow: 0 4px 20px rgba(37,99,235,0.08); }
+  .service-card:hover { border-color: var(--accent); box-shadow: 0 4px 20px rgba(79,143,255,0.08); }
   .service-card .icon { font-size: 28px; margin-bottom: 12px; }
   .service-card h3 { font-size: 17px; font-weight: 700; margin-bottom: 8px; }
   .service-card p { font-size: 14px; color: var(--text2); line-height: 1.6; }
 
-  /* How it works */
+  /* Steps */
   .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; counter-reset: step; }
   .step { position: relative; padding: 24px; }
   .step::before { counter-increment: step; content: counter(step); position: absolute; top: 0; left: 0; font-size: 48px; font-weight: 800; color: var(--accent-light); line-height: 1; }
+  [data-theme="dark"] .step::before { color: var(--accent-light); }
   .step h3 { font-size: 16px; font-weight: 700; margin: 12px 0 6px; padding-top: 24px; }
   .step p { font-size: 14px; color: var(--text2); }
 
@@ -82,7 +100,6 @@
   .form-submit { width: 100%; padding: 14px; background: var(--accent); color: #fff; border: none; border-radius: 8px; font-size: 16px; font-weight: 700; cursor: pointer; transition: background 0.2s; }
   .form-submit:hover { background: var(--accent-dark); }
   .form-note { text-align: center; margin-top: 12px; font-size: 13px; color: var(--text3); }
-  /* Honeypot */
   .ohnohoney { position: absolute; left: -9999px; }
 
   /* Footer */
@@ -97,6 +114,7 @@
     .nav-links a:not(.nav-cta) { display: none; }
     .contact-section { padding: 28px 20px; }
     nav { padding: 12px 16px; }
+    .nav-right { gap: 10px; }
   }
 </style>
 </head>
@@ -105,103 +123,50 @@
 <!-- Nav -->
 <nav>
   <a href="#" class="logo">Kons<span>tech</span></a>
-  <div class="nav-links">
-    <a href="#services">Leistungen</a>
-    <a href="#how">Ablauf</a>
-    <a href="#contact" class="nav-cta">Kostenlose Beratung</a>
+  <div class="nav-right">
+    <div class="nav-links">
+      <a href="#services" id="navServices">Leistungen</a>
+      <a href="#how" id="navHow">Ablauf</a>
+      <a href="#contact" class="nav-cta" id="navCta">Kostenlose Beratung</a>
+    </div>
+    <button class="toggle-btn" id="themeToggle" onclick="toggleTheme()" title="Toggle theme">🌙</button>
+    <button class="toggle-btn" id="langToggle" onclick="toggleLang()" title="Switch language">EN</button>
   </div>
 </nav>
 
 <!-- Hero -->
 <div class="hero">
-  <h1>Ihr Unternehmen.<br><span>Schneller. Smarter.</span></h1>
-  <p>Wir helfen lokalen Unternehmen am Bodensee, mit moderner Technik und KI mehr aus ihrer Zeit herauszuholen — ohne Buzzwords, ohne Overhead.</p>
-  <a href="#contact" class="hero-cta">Jetzt kostenlos beraten lassen</a>
-  <div class="hero-sub">Unverbindlich · 15 Minuten · Konkrete Ideen für Ihr Geschäft</div>
+  <h1><span id="heroH1a">Ihr Unternehmen.</span><br><span id="heroH1b" style="color:var(--accent)">Schneller. Smarter.</span></h1>
+  <p id="heroP"></p>
+  <a href="#contact" class="hero-cta" id="heroCta">Jetzt kostenlos beraten lassen</a>
+  <div class="hero-sub" id="heroSub"></div>
 </div>
 
 <hr class="section-divider">
 
 <!-- Services -->
 <section id="services">
-  <h2>Was wir für Sie tun</h2>
-  <p class="subtitle">Keine Theorie, sondern Lösungen, die ab Tag 1 funktionieren.</p>
-  <div class="services">
-    <div class="service-card">
-      <div class="icon">⚙️</div>
-      <h3>Prozesse automatisieren</h3>
-      <p>Wiederkehrende Aufgaben wie Rechnungen, E-Mails oder Datenpflege — wir bauen Systeme, die das für Sie erledigen.</p>
-    </div>
-    <div class="service-card">
-      <div class="icon">🤖</div>
-      <h3>KI sinnvoll einsetzen</h3>
-      <p>Von intelligenter Textverarbeitung bis automatisierten Antworten — KI dort, wo sie echten Nutzen bringt.</p>
-    </div>
-    <div class="service-card">
-      <div class="icon">📊</div>
-      <h3>Daten nutzbar machen</h3>
-      <p>Ihre vorhandenen Daten in klare Übersichten und Entscheidungshilfen verwandeln — kein Excel-Chaos mehr.</p>
-    </div>
-    <div class="service-card">
-      <div class="icon">🌐</div>
-      <h3>Digitale Präsenz</h3>
-      <p>Schnelle, moderne Webseiten und Online-Tools, die Kunden überzeugen und Ihnen Arbeit abnehmen.</p>
-    </div>
-    <div class="service-card">
-      <div class="icon">🔗</div>
-      <h3>Systeme verbinden</h3>
-      <p>Ihre bestehenden Tools (Buchhaltung, CRM, Kalender) miteinander sprechen lassen — automatisch und fehlerfrei.</p>
-    </div>
-    <div class="service-card">
-      <div class="icon">🛡️</div>
-      <h3>Sicherheit & DSGVO</h3>
-      <p>Technik-Setup, das den deutschen Datenschutzanforderungen entspricht — ohne Kopfschmerzen.</p>
-    </div>
-  </div>
+  <h2 id="servicesTitle"></h2>
+  <p class="subtitle" id="servicesSubtitle"></p>
+  <div class="services" id="servicesGrid"></div>
 </section>
 
 <hr class="section-divider">
 
-<!-- How it works -->
+<!-- How -->
 <section id="how">
-  <h2>So einfach geht's</h2>
-  <p class="subtitle">Von der ersten Nachricht bis zur laufenden Lösung — in drei Schritten.</p>
-  <div class="steps">
-    <div class="step">
-      <h3>Kurze Nachricht</h3>
-      <p>Erzählen Sie uns in 2–3 Sätzen, was Sie beschäftigt. Wir melden uns innerhalb von 24 Stunden.</p>
-    </div>
-    <div class="step">
-      <h3>Kostenlose Beratung</h3>
-      <p>15 Minuten Gespräch — wir hören zu, stellen Fragen und geben Ihnen konkrete Vorschläge. Unverbindlich.</p>
-    </div>
-    <div class="step">
-      <h3>Umsetzung</h3>
-      <p>Wir bauen die Lösung, testen sie mit Ihnen und sorgen dafür, dass alles rund läuft. Kein Technik-Jargon.</p>
-    </div>
-  </div>
+  <h2 id="howTitle"></h2>
+  <p class="subtitle" id="howSubtitle"></p>
+  <div class="steps" id="stepsGrid"></div>
 </section>
 
 <hr class="section-divider">
 
 <!-- Results -->
-<section>
-  <h2>Typische Ergebnisse</h2>
-  <p class="subtitle">Was unsere Kunden nach der Zusammenarbeit berichten.</p>
-  <div class="results">
-    <div class="result-item">
-      <div class="number">-60%</div>
-      <div class="label">weniger manuelle Arbeit</div>
-    </div>
-    <div class="result-item">
-      <div class="number">3×</div>
-      <div class="label">schnellere Antwortzeiten</div>
-    </div>
-    <div class="result-item">
-      <div class="number">100%</div>
-      <div class="label">DSGVO-konform</div>
-    </div>
-  </div>
+<section id="results">
+  <h2 id="resultsTitle"></h2>
+  <p class="subtitle" id="resultsSubtitle"></p>
+  <div class="results" id="resultsGrid"></div>
 </section>
 
 <hr class="section-divider">
@@ -209,65 +174,170 @@
 <!-- Contact -->
 <section id="contact">
   <div class="contact-section">
-    <h2>Lassen Sie uns sprechen</h2>
-    <p class="subtitle">Kostenlos, unverbindlich, in 2 Minuten abgeschickt.</p>
+    <h2 id="contactTitle"></h2>
+    <p class="subtitle" id="contactSubtitle"></p>
     <form action="https://formspree.io/f/xyzgobkn" method="POST" id="contactForm">
-      <!-- Honeypot field (anti-spam) -->
       <div class="ohnohoney">
         <input type="text" name="_gotcha" tabindex="-1" autocomplete="off">
       </div>
-      <!-- Redirect after submit -->
       <input type="hidden" name="_next" value="https://konstech.xyz/#thankyou">
       <input type="hidden" name="_subject" value="Neue Anfrage via konstech.xyz">
       <div class="form-row">
-        <label for="name">Name</label>
-        <input type="text" id="name" name="name" required placeholder="Max Mustermann" maxlength="100">
+        <label for="name" id="labelName">Name</label>
+        <input type="text" id="inputName" name="name" required maxlength="100">
       </div>
       <div class="form-row">
-        <label for="email">E-Mail</label>
-        <input type="email" id="email" name="email" required placeholder="max@beispiel.de" maxlength="200">
+        <label for="email" id="labelEmail">E-Mail</label>
+        <input type="email" id="inputEmail" name="email" required maxlength="200">
       </div>
       <div class="form-row">
-        <label for="message">Was können wir für Sie tun?</label>
-        <textarea id="message" name="message" required placeholder="Erzählen Sie uns kurz, was Sie beschäftigt…" maxlength="2000"></textarea>
+        <label for="message" id="labelMessage">Was können wir für Sie tun?</label>
+        <textarea id="inputMessage" name="message" required maxlength="2000"></textarea>
       </div>
-      <button type="submit" class="form-submit">Nachricht senden</button>
-      <p class="form-note">Ihre Daten werden nur zur Kontaktaufnahme verwendet. Kein Spam, kein Newsletter.</p>
+      <button type="submit" class="form-submit" id="formSubmit">Nachricht senden</button>
+      <p class="form-note" id="formNote"></p>
     </form>
     <div id="thankyou" style="display:none;text-align:center;padding:40px 0">
-      <p style="font-size:20px;font-weight:700;color:var(--accent)">✓ Nachricht gesendet!</p>
-      <p style="color:var(--text2);margin-top:8px">Wir melden uns innerhalb von 24 Stunden bei Ihnen.</p>
+      <p style="font-size:20px;font-weight:700;color:var(--accent)" id="tyTitle"></p>
+      <p style="color:var(--text2);margin-top:8px" id="tySub"></p>
     </div>
   </div>
 </section>
 
 <!-- Footer -->
 <footer>
-  <p>© 2026 Konstech · Konstanz, Bodensee · <a href="mailto:azsidhu8@gmail.com">azsidhu8@gmail.com</a></p>
+  <p><span id="footerText"></span> · <a href="mailto:azsidhu8@gmail.com">azsidhu8@gmail.com</a></p>
 </footer>
 
 <script>
-// Show thank you if redirected back
-if (location.hash === '#thankyou') {
-  const form = document.getElementById('contactForm');
-  const ty = document.getElementById('thankyou');
-  if (form && ty) { form.style.display = 'none'; ty.style.display = 'block'; }
+const LOCALES = {};
+let currentLang = 'de';
+let rateLimitMsg = '';
+
+async function loadLocale(lang) {
+  if (!LOCALES[lang]) {
+    const res = await fetch(new URL(`locales/${lang}.json`, location.href));
+    LOCALES[lang] = await res.json();
+  }
+  return LOCALES[lang];
 }
 
-// Basic client-side rate limiting
-(function() {
+function applyLocale(d) {
+  document.title = d.meta.title;
+  document.documentElement.lang = d.meta.lang;
+
+  // Nav
+  document.getElementById('navServices').textContent = d.nav.services;
+  document.getElementById('navHow').textContent = d.nav.how;
+  document.getElementById('navCta').textContent = d.nav.cta;
+  document.getElementById('langToggle').textContent = d.nav.switchLang;
+
+  // Hero
+  document.getElementById('heroH1a').textContent = d.hero.h1a;
+  document.getElementById('heroH1b').textContent = d.hero.h1b;
+  document.getElementById('heroP').textContent = d.hero.p;
+  document.getElementById('heroCta').textContent = d.hero.cta;
+  document.getElementById('heroSub').textContent = d.hero.sub;
+
+  // Services
+  document.getElementById('servicesTitle').textContent = d.services.title;
+  document.getElementById('servicesSubtitle').textContent = d.services.subtitle;
+  document.getElementById('servicesGrid').innerHTML = d.services.items.map(s => `
+    <div class="service-card">
+      <div class="icon">${s.icon}</div>
+      <h3>${s.title}</h3>
+      <p>${s.desc}</p>
+    </div>`).join('');
+
+  // How
+  document.getElementById('howTitle').textContent = d.how.title;
+  document.getElementById('howSubtitle').textContent = d.how.subtitle;
+  document.getElementById('stepsGrid').innerHTML = d.how.steps.map(s => `
+    <div class="step">
+      <h3>${s.title}</h3>
+      <p>${s.desc}</p>
+    </div>`).join('');
+
+  // Results
+  document.getElementById('resultsTitle').textContent = d.results.title;
+  document.getElementById('resultsSubtitle').textContent = d.results.subtitle;
+  document.getElementById('resultsGrid').innerHTML = d.results.items.map(r => `
+    <div class="result-item">
+      <div class="number">${r.number}</div>
+      <div class="label">${r.label}</div>
+    </div>`).join('');
+
+  // Contact
+  document.getElementById('contactTitle').textContent = d.contact.title;
+  document.getElementById('contactSubtitle').textContent = d.contact.subtitle;
+  document.getElementById('labelName').textContent = d.contact.name;
+  document.getElementById('inputName').placeholder = d.contact.namePlaceholder;
+  document.getElementById('labelEmail').textContent = d.contact.email;
+  document.getElementById('inputEmail').placeholder = d.contact.emailPlaceholder;
+  document.getElementById('labelMessage').textContent = d.contact.message;
+  document.getElementById('inputMessage').placeholder = d.contact.messagePlaceholder;
+  document.getElementById('formSubmit').textContent = d.contact.submit;
+  document.getElementById('formNote').textContent = d.contact.note;
+  document.getElementById('tyTitle').textContent = d.contact.thankYou;
+  document.getElementById('tySub').textContent = d.contact.thankYouSub;
+  rateLimitMsg = d.contact.rateLimitMsg;
+
+  // Footer
+  document.getElementById('footerText').textContent = d.footer;
+}
+
+async function setLang(lang) {
+  currentLang = lang;
+  const data = await loadLocale(lang);
+  applyLocale(data);
+  localStorage.setItem('konstech_lang', lang);
+}
+
+function toggleLang() {
+  setLang(currentLang === 'de' ? 'en' : 'de');
+}
+
+function toggleTheme() {
+  const html = document.documentElement;
+  const isDark = html.getAttribute('data-theme') === 'dark';
+  const next = isDark ? 'light' : 'dark';
+  html.setAttribute('data-theme', next);
+  document.getElementById('themeToggle').textContent = next === 'dark' ? '🌙' : '☀️';
+  localStorage.setItem('konstech_theme', next);
+}
+
+// Init
+(async () => {
+  // Restore theme (default: dark)
+  const savedTheme = localStorage.getItem('konstech_theme') || 'dark';
+  document.documentElement.setAttribute('data-theme', savedTheme);
+  document.getElementById('themeToggle').textContent = savedTheme === 'dark' ? '🌙' : '☀️';
+
+  // Restore language (default: de)
+  const savedLang = localStorage.getItem('konstech_lang') || 'de';
+  await setLang(savedLang);
+
+  // Thank you redirect
+  if (location.hash === '#thankyou') {
+    const form = document.getElementById('contactForm');
+    const ty = document.getElementById('thankyou');
+    if (form && ty) { form.style.display = 'none'; ty.style.display = 'block'; }
+  }
+
+  // Rate limiting
   const form = document.getElementById('contactForm');
-  if (!form) return;
-  form.addEventListener('submit', function(e) {
-    const last = localStorage.getItem('konstech_last_submit');
-    const now = Date.now();
-    if (last && (now - parseInt(last)) < 60000) {
-      e.preventDefault();
-      alert('Bitte warten Sie eine Minute, bevor Sie erneut senden.');
-      return;
-    }
-    localStorage.setItem('konstech_last_submit', now.toString());
-  });
+  if (form) {
+    form.addEventListener('submit', function(e) {
+      const last = localStorage.getItem('konstech_last_submit');
+      const now = Date.now();
+      if (last && (now - parseInt(last)) < 60000) {
+        e.preventDefault();
+        alert(rateLimitMsg);
+        return;
+      }
+      localStorage.setItem('konstech_last_submit', now.toString());
+    });
+  }
 })();
 </script>
 </body>
