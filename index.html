@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Konstech — Technik & KI für lokale Unternehmen am Bodensee</title>
+<meta name="description" content="Konstech hilft Unternehmen rund um den Bodensee, mit moderner Technik und KI effizienter zu arbeiten. Kostenlose Erstberatung.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+<style>
+  :root {
+    --bg: #fafbfc;
+    --surface: #fff;
+    --text: #1a1a2e;
+    --text2: #4a4a6a;
+    --text3: #8a8aa0;
+    --accent: #2563eb;
+    --accent-light: #dbeafe;
+    --accent-dark: #1d4ed8;
+    --border: #e5e7eb;
+    --radius: 12px;
+    --max-w: 960px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Inter, sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; font-size: 16px; }
+
+  /* Nav */
+  nav { position: sticky; top: 0; z-index: 100; background: rgba(255,255,255,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); padding: 14px 24px; display: flex; align-items: center; justify-content: space-between; }
+  .logo { font-size: 20px; font-weight: 800; color: var(--text); text-decoration: none; letter-spacing: -0.5px; }
+  .logo span { color: var(--accent); }
+  .nav-links { display: flex; gap: 24px; align-items: center; }
+  .nav-links a { color: var(--text2); text-decoration: none; font-size: 15px; font-weight: 500; transition: color 0.2s; }
+  .nav-links a:hover { color: var(--accent); }
+  .nav-cta { background: var(--accent); color: #fff; padding: 8px 20px; border-radius: 8px; font-weight: 600; font-size: 14px; text-decoration: none; transition: background 0.2s; }
+  .nav-cta:hover { background: var(--accent-dark); }
+
+  /* Hero */
+  .hero { max-width: var(--max-w); margin: 0 auto; padding: 80px 24px 60px; text-align: center; }
+  .hero h1 { font-size: 42px; font-weight: 800; line-height: 1.2; margin-bottom: 20px; letter-spacing: -1px; }
+  .hero h1 span { color: var(--accent); }
+  .hero p { font-size: 19px; color: var(--text2); max-width: 600px; margin: 0 auto 32px; }
+  .hero-cta { display: inline-block; background: var(--accent); color: #fff; padding: 14px 36px; border-radius: 10px; font-size: 16px; font-weight: 700; text-decoration: none; transition: transform 0.2s, background 0.2s; }
+  .hero-cta:hover { background: var(--accent-dark); transform: translateY(-2px); }
+  .hero-sub { margin-top: 14px; font-size: 14px; color: var(--text3); }
+
+  /* Sections */
+  section { max-width: var(--max-w); margin: 0 auto; padding: 60px 24px; }
+  section h2 { font-size: 28px; font-weight: 800; margin-bottom: 12px; letter-spacing: -0.5px; }
+  section .subtitle { color: var(--text2); font-size: 17px; margin-bottom: 36px; }
+  .section-divider { max-width: var(--max-w); margin: 0 auto; border: none; border-top: 1px solid var(--border); }
+
+  /* Services grid */
+  .services { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .service-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 28px 24px; transition: border-color 0.2s, box-shadow 0.2s; }
+  .service-card:hover { border-color: var(--accent); box-shadow: 0 4px 20px rgba(37,99,235,0.08); }
+  .service-card .icon { font-size: 28px; margin-bottom: 12px; }
+  .service-card h3 { font-size: 17px; font-weight: 700; margin-bottom: 8px; }
+  .service-card p { font-size: 14px; color: var(--text2); line-height: 1.6; }
+
+  /* How it works */
+  .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; counter-reset: step; }
+  .step { position: relative; padding: 24px; }
+  .step::before { counter-increment: step; content: counter(step); position: absolute; top: 0; left: 0; font-size: 48px; font-weight: 800; color: var(--accent-light); line-height: 1; }
+  .step h3 { font-size: 16px; font-weight: 700; margin: 12px 0 6px; padding-top: 24px; }
+  .step p { font-size: 14px; color: var(--text2); }
+
+  /* Results */
+  .results { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; text-align: center; }
+  .result-item .number { font-size: 36px; font-weight: 800; color: var(--accent); }
+  .result-item .label { font-size: 14px; color: var(--text2); margin-top: 4px; }
+
+  /* Contact form */
+  .contact-section { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 40px; max-width: 600px; margin: 0 auto; }
+  .contact-section h2 { text-align: center; }
+  .contact-section .subtitle { text-align: center; }
+  .form-row { margin-bottom: 16px; }
+  .form-row label { display: block; font-size: 14px; font-weight: 600; margin-bottom: 4px; color: var(--text2); }
+  .form-row input, .form-row textarea { width: 100%; padding: 12px 14px; border: 1px solid var(--border); border-radius: 8px; font-size: 15px; font-family: inherit; background: var(--bg); color: var(--text); outline: none; transition: border-color 0.2s; }
+  .form-row input:focus, .form-row textarea:focus { border-color: var(--accent); }
+  .form-row textarea { resize: vertical; min-height: 100px; }
+  .form-submit { width: 100%; padding: 14px; background: var(--accent); color: #fff; border: none; border-radius: 8px; font-size: 16px; font-weight: 700; cursor: pointer; transition: background 0.2s; }
+  .form-submit:hover { background: var(--accent-dark); }
+  .form-note { text-align: center; margin-top: 12px; font-size: 13px; color: var(--text3); }
+  /* Honeypot */
+  .ohnohoney { position: absolute; left: -9999px; }
+
+  /* Footer */
+  footer { text-align: center; padding: 32px 24px; font-size: 13px; color: var(--text3); border-top: 1px solid var(--border); margin-top: 40px; }
+  footer a { color: var(--accent); text-decoration: none; }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .hero h1 { font-size: 30px; }
+    .hero p { font-size: 17px; }
+    .services, .steps, .results { grid-template-columns: 1fr; }
+    .nav-links a:not(.nav-cta) { display: none; }
+    .contact-section { padding: 28px 20px; }
+    nav { padding: 12px 16px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Nav -->
+<nav>
+  <a href="#" class="logo">Kons<span>tech</span></a>
+  <div class="nav-links">
+    <a href="#services">Leistungen</a>
+    <a href="#how">Ablauf</a>
+    <a href="#contact" class="nav-cta">Kostenlose Beratung</a>
+  </div>
+</nav>
+
+<!-- Hero -->
+<div class="hero">
+  <h1>Ihr Unternehmen.<br><span>Schneller. Smarter.</span></h1>
+  <p>Wir helfen lokalen Unternehmen am Bodensee, mit moderner Technik und KI mehr aus ihrer Zeit herauszuholen — ohne Buzzwords, ohne Overhead.</p>
+  <a href="#contact" class="hero-cta">Jetzt kostenlos beraten lassen</a>
+  <div class="hero-sub">Unverbindlich · 15 Minuten · Konkrete Ideen für Ihr Geschäft</div>
+</div>
+
+<hr class="section-divider">
+
+<!-- Services -->
+<section id="services">
+  <h2>Was wir für Sie tun</h2>
+  <p class="subtitle">Keine Theorie, sondern Lösungen, die ab Tag 1 funktionieren.</p>
+  <div class="services">
+    <div class="service-card">
+      <div class="icon">⚙️</div>
+      <h3>Prozesse automatisieren</h3>
+      <p>Wiederkehrende Aufgaben wie Rechnungen, E-Mails oder Datenpflege — wir bauen Systeme, die das für Sie erledigen.</p>
+    </div>
+    <div class="service-card">
+      <div class="icon">🤖</div>
+      <h3>KI sinnvoll einsetzen</h3>
+      <p>Von intelligenter Textverarbeitung bis automatisierten Antworten — KI dort, wo sie echten Nutzen bringt.</p>
+    </div>
+    <div class="service-card">
+      <div class="icon">📊</div>
+      <h3>Daten nutzbar machen</h3>
+      <p>Ihre vorhandenen Daten in klare Übersichten und Entscheidungshilfen verwandeln — kein Excel-Chaos mehr.</p>
+    </div>
+    <div class="service-card">
+      <div class="icon">🌐</div>
+      <h3>Digitale Präsenz</h3>
+      <p>Schnelle, moderne Webseiten und Online-Tools, die Kunden überzeugen und Ihnen Arbeit abnehmen.</p>
+    </div>
+    <div class="service-card">
+      <div class="icon">🔗</div>
+      <h3>Systeme verbinden</h3>
+      <p>Ihre bestehenden Tools (Buchhaltung, CRM, Kalender) miteinander sprechen lassen — automatisch und fehlerfrei.</p>
+    </div>
+    <div class="service-card">
+      <div class="icon">🛡️</div>
+      <h3>Sicherheit & DSGVO</h3>
+      <p>Technik-Setup, das den deutschen Datenschutzanforderungen entspricht — ohne Kopfschmerzen.</p>
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- How it works -->
+<section id="how">
+  <h2>So einfach geht's</h2>
+  <p class="subtitle">Von der ersten Nachricht bis zur laufenden Lösung — in drei Schritten.</p>
+  <div class="steps">
+    <div class="step">
+      <h3>Kurze Nachricht</h3>
+      <p>Erzählen Sie uns in 2–3 Sätzen, was Sie beschäftigt. Wir melden uns innerhalb von 24 Stunden.</p>
+    </div>
+    <div class="step">
+      <h3>Kostenlose Beratung</h3>
+      <p>15 Minuten Gespräch — wir hören zu, stellen Fragen und geben Ihnen konkrete Vorschläge. Unverbindlich.</p>
+    </div>
+    <div class="step">
+      <h3>Umsetzung</h3>
+      <p>Wir bauen die Lösung, testen sie mit Ihnen und sorgen dafür, dass alles rund läuft. Kein Technik-Jargon.</p>
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- Results -->
+<section>
+  <h2>Typische Ergebnisse</h2>
+  <p class="subtitle">Was unsere Kunden nach der Zusammenarbeit berichten.</p>
+  <div class="results">
+    <div class="result-item">
+      <div class="number">-60%</div>
+      <div class="label">weniger manuelle Arbeit</div>
+    </div>
+    <div class="result-item">
+      <div class="number">3×</div>
+      <div class="label">schnellere Antwortzeiten</div>
+    </div>
+    <div class="result-item">
+      <div class="number">100%</div>
+      <div class="label">DSGVO-konform</div>
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- Contact -->
+<section id="contact">
+  <div class="contact-section">
+    <h2>Lassen Sie uns sprechen</h2>
+    <p class="subtitle">Kostenlos, unverbindlich, in 2 Minuten abgeschickt.</p>
+    <form action="https://formspree.io/f/xyzgobkn" method="POST" id="contactForm">
+      <!-- Honeypot field (anti-spam) -->
+      <div class="ohnohoney">
+        <input type="text" name="_gotcha" tabindex="-1" autocomplete="off">
+      </div>
+      <!-- Redirect after submit -->
+      <input type="hidden" name="_next" value="https://konstech.xyz/#thankyou">
+      <input type="hidden" name="_subject" value="Neue Anfrage via konstech.xyz">
+      <div class="form-row">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required placeholder="Max Mustermann" maxlength="100">
+      </div>
+      <div class="form-row">
+        <label for="email">E-Mail</label>
+        <input type="email" id="email" name="email" required placeholder="max@beispiel.de" maxlength="200">
+      </div>
+      <div class="form-row">
+        <label for="message">Was können wir für Sie tun?</label>
+        <textarea id="message" name="message" required placeholder="Erzählen Sie uns kurz, was Sie beschäftigt…" maxlength="2000"></textarea>
+      </div>
+      <button type="submit" class="form-submit">Nachricht senden</button>
+      <p class="form-note">Ihre Daten werden nur zur Kontaktaufnahme verwendet. Kein Spam, kein Newsletter.</p>
+    </form>
+    <div id="thankyou" style="display:none;text-align:center;padding:40px 0">
+      <p style="font-size:20px;font-weight:700;color:var(--accent)">✓ Nachricht gesendet!</p>
+      <p style="color:var(--text2);margin-top:8px">Wir melden uns innerhalb von 24 Stunden bei Ihnen.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <p>© 2026 Konstech · Konstanz, Bodensee · <a href="mailto:azsidhu8@gmail.com">azsidhu8@gmail.com</a></p>
+</footer>
+
+<script>
+// Show thank you if redirected back
+if (location.hash === '#thankyou') {
+  const form = document.getElementById('contactForm');
+  const ty = document.getElementById('thankyou');
+  if (form && ty) { form.style.display = 'none'; ty.style.display = 'block'; }
+}
+
+// Basic client-side rate limiting
+(function() {
+  const form = document.getElementById('contactForm');
+  if (!form) return;
+  form.addEventListener('submit', function(e) {
+    const last = localStorage.getItem('konstech_last_submit');
+    const now = Date.now();
+    if (last && (now - parseInt(last)) < 60000) {
+      e.preventDefault();
+      alert('Bitte warten Sie eine Minute, bevor Sie erneut senden.');
+      return;
+    }
+    localStorage.setItem('konstech_last_submit', now.toString());
+  });
+})();
+</script>
+</body>
+</html>
