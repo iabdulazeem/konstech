@@ -6,7 +6,7 @@
     "h1b": "Faster. Smarter.",
     "p": "We help local businesses around Lake Constance get more out of their time with modern tech and AI — no buzzwords, no overhead.",
     "cta": "Get free consultation",
-    "sub": "No commitment · 15 minutes · Concrete ideas for your business"
+    "sub": ""
   },
   "services": {
     "title": "What we do for you",
@@ -40,7 +40,7 @@
   },
   "contact": {
     "title": "Let's talk",
-    "subtitle": "Free, no commitment, sent in 2 minutes.",
+    "subtitle": "",
     "name": "Name",
     "namePlaceholder": "John Smith",
     "email": "Email",

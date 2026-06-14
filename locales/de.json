@@ -6,7 +6,7 @@
     "h1b": "Schneller. Smarter.",
     "p": "Wir helfen lokalen Unternehmen am Bodensee, mit moderner Technik und KI mehr aus ihrer Zeit herauszuholen — ohne Buzzwords, ohne Overhead.",
     "cta": "Jetzt kostenlos beraten lassen",
-    "sub": "Unverbindlich · 15 Minuten · Konkrete Ideen für Ihr Geschäft"
+    "sub": ""
   },
   "services": {
     "title": "Was wir für Sie tun",
@@ -40,7 +40,7 @@
   },
   "contact": {
     "title": "Lassen Sie uns sprechen",
-    "subtitle": "Kostenlos, unverbindlich, in 2 Minuten abgeschickt.",
+    "subtitle": "",
     "name": "Name",
     "namePlaceholder": "Max Mustermann",
     "email": "E-Mail",
